@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#D81C60</color>>
+    <color name="colorPrimary">#D81C60</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="home_buttons_back">#e60b0b</color>
+    <color name="home_buttons_text">#ffffff</color>
+    <color name="buttons_back_disabled">#80008577</color>
+
+    <color name="edit_text_background">#dfdfdf</color>
+    <color name="view_text_results">#ce1513</color>
+    <color name="background_black">#000000</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="background_disable">#dfdfdf</color>
+
+    <color name="toolbar_background">#D81C60</color>
+
+    <color name="text_white">#ffffff</color>
+    <color name="text_black">#000000</color>
+    <color name="text_red">#D81C60</color>
+
+    <color name="colorSecundary">#F490B4</color>
+    <color name="colorDisable">#808080</color>
+
+</resources>
