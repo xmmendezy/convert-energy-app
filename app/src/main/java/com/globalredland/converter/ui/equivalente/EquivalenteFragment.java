@@ -195,6 +195,7 @@ public class EquivalenteFragment extends Fragment {
 
                 EditText converter_units = root.findViewById(R.id.converter_units);
                 TextView convert_units_to = root.findViewById(R.id.textview_units_to);
+                TextView convert_units_to_label = root.findViewById(R.id.textview_units_to_label);
                 Spinner spinner_fuels_from = root.findViewById(R.id.spinner_fuel_from);
                 Spinner spinner_fuels_to = root.findViewById(R.id.spinner_fuel_to);
                 Spinner spinner_units_from = root.findViewById(R.id.spinner_units_from);
@@ -202,8 +203,8 @@ public class EquivalenteFragment extends Fragment {
 
                 converter_units.setText("");
                 convert_units_to.setText("---");
+                convert_units_to_label.setText("");
                 convert_units_to.setTextColor(ContextCompat.getColor(context, R.color.colorDisable));
-                convert_units_to.setTextSize(20);
                 spinner_fuels_from.setSelection(0);
                 spinner_fuels_to.setSelection(0);
                 spinner_fuels_from.setBackgroundResource(R.drawable.round_select_disable);
@@ -909,9 +910,10 @@ public class EquivalenteFragment extends Fragment {
             f.setMaximumFractionDigits(2);
 
             TextView convert_units_to = root.findViewById(R.id.textview_units_to);
+            TextView convert_units_to_label = root.findViewById(R.id.textview_units_to_label);
 
-            convert_units_to.setText(f.format(totalConvertirEquivalentes) + " " + simbolo);
-            convert_units_to.setTextSize(16);
+            convert_units_to.setText(f.format(totalConvertirEquivalentes));
+            convert_units_to_label.setText(simbolo);
             convert_units_to.setTextColor(Color.BLACK);
 
         }
