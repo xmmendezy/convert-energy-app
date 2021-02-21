@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,9 @@ public class ConverterFragment extends Fragment {
         navigationView.getMenu().getItem(4).setChecked(false);
         navigationView.getMenu().getItem(5).setChecked(false);
 
+        root.clearFocus();
+
+        hidden_keyboard(root, context);
         button_disabled(root);
         button_delete_hide(root);
         loadSpinnerFuel(root, db);
@@ -70,6 +74,7 @@ public class ConverterFragment extends Fragment {
         spinner_fuel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hidden_keyboard(root, context);
                 if (i != 0) {
                     loadSpinnerUnits(root, db, i);
                 }
@@ -83,12 +88,13 @@ public class ConverterFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         spinner_units_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hidden_keyboard(root, context);
                 Spinner spinner_units_to = root.findViewById(R.id.spinner_units_to);
                 Spinner spinner_units_from = root.findViewById(R.id.spinner_units_from);
                 if(!(spinner_units_to.getSelectedItemPosition() == 0)) {
@@ -104,12 +110,13 @@ public class ConverterFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         spinner_units_to.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hidden_keyboard(root, context);
                 Spinner spinner_units_from = root.findViewById(R.id.spinner_units_from);
                 Spinner spinner_units_to = root.findViewById(R.id.spinner_units_to);
                 if(!(spinner_units_from.getSelectedItemPosition() == 0)) {
@@ -127,13 +134,15 @@ public class ConverterFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
 
         button_converter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                hidden_keyboard(root, context);
 
                 AppDatabase db = AppDatabase.getInstance(getContext());
 
@@ -162,6 +171,8 @@ public class ConverterFragment extends Fragment {
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                hidden_keyboard(root, context);
                 button_delete_hide(root);
 
                 EditText converter_units = root.findViewById(R.id.converter_units);
@@ -182,6 +193,10 @@ public class ConverterFragment extends Fragment {
         });
 
         return root;
+    }
+    private void hidden_keyboard(View root, Context context) {
+        InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(root.findViewById(R.id.textview_units_to).getWindowToken(), 0);
     }
     private void button_disabled(View root){
         Button button_convert = root.findViewById(R.id.converter_button);

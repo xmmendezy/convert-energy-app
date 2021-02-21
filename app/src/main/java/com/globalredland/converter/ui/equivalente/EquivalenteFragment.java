@@ -55,6 +55,7 @@ public class EquivalenteFragment extends Fragment {
         navigationView.getMenu().getItem(4).setChecked(false);
         navigationView.getMenu().getItem(5).setChecked(false);
 
+        hidden_keyboard(root, context);
         button_disabled(root);
         button_delete_hide(root);
         loadSpinnerFuelFrom(root, db);
@@ -72,6 +73,7 @@ public class EquivalenteFragment extends Fragment {
         spinner_fuel_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hidden_keyboard(root, context);
 //                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
 //                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 if (i != 0){
@@ -88,13 +90,13 @@ public class EquivalenteFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         spinner_units_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                hidden_keyboard(root, context);
                 if (i != 0){
                     button_delete_hide(root);
                 }
@@ -110,13 +112,13 @@ public class EquivalenteFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         spinner_fuel_to.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+                hidden_keyboard(root, context);
                 if (i != 0){
                     loadSpinnerUnitsTo(root, db, i);
                 }
@@ -130,12 +132,13 @@ public class EquivalenteFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         spinner_units_to.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                hidden_keyboard(root, context);
                 if (i != 0){
                     button_delete_hide(root);
                     button_enabled(root);
@@ -153,12 +156,14 @@ public class EquivalenteFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                hidden_keyboard(root, context);
             }
         });
         button_converter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                hidden_keyboard(root, context);
+
                 AppDatabase db = AppDatabase.getInstance(getContext());
 
                 EditText converter_units = root.findViewById(R.id.converter_units);
@@ -191,6 +196,8 @@ public class EquivalenteFragment extends Fragment {
         button_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                hidden_keyboard(root, context);
                 button_delete_hide(root);
 
                 EditText converter_units = root.findViewById(R.id.converter_units);
@@ -221,6 +228,10 @@ public class EquivalenteFragment extends Fragment {
         });
 
         return root;
+    }
+    private void hidden_keyboard(View root, Context context) {
+        InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(root.findViewById(R.id.textview_units_to).getWindowToken(), 0);
     }
     private void button_disabled(View root){
         Button button_convert = root.findViewById(R.id.converter_button);
