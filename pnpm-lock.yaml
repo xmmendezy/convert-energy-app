@@ -3,12 +3,14 @@ lockfileVersion: 5.3
 specifiers:
   '@capacitor/cli': ^3.3.2
   '@capacitor/core': ^3.3.2
+  '@fontsource/poppins': ^4.5.0
   '@iconify-json/fa-solid': ^1.0.2
   '@types/node': ^16.11.9
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
   '@vitejs/plugin-vue': ^1.9.3
   '@vue/compiler-sfc': ^3.2.22
+  '@vueuse/core': ^7.0.1
   bulma: ^0.9.3
   eslint: ^8.2.0
   eslint-config-prettier: ^8.3.0
@@ -16,7 +18,6 @@ specifiers:
   eslint-plugin-vue: ^8.1.1
   sass: ^1.43.4
   typescript: ^4.4.3
-  unplugin-auto-import: ^0.4.14
   unplugin-icons: ^0.12.18
   unplugin-vue-components: ^0.17.2
   vite: ^2.6.4
@@ -28,6 +29,8 @@ specifiers:
 
 dependencies:
   '@capacitor/core': 3.3.2
+  '@fontsource/poppins': 4.5.0
+  '@vueuse/core': 7.0.1_vue@3.2.22
   bulma: 0.9.3
   vue: 3.2.22
   vue-router: 4.0.12_vue@3.2.22
@@ -46,7 +49,6 @@ devDependencies:
   eslint-plugin-vue: 8.1.1_eslint@8.2.0
   sass: 1.43.4
   typescript: 4.5.2
-  unplugin-auto-import: 0.4.14_vite@2.6.14
   unplugin-icons: 0.12.18_744c3dc4f4777e47e76c501a561da7bf
   unplugin-vue-components: 0.17.2_vite@2.6.14+vue@3.2.22
   vite: 2.6.14_sass@1.43.4
@@ -150,6 +152,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@fontsource/poppins/4.5.0:
+    resolution: {integrity: sha512-RqgMIQqKHWNH3IUj+a0MAhlb4g5fftsXRTJ2bauefBmfM8Ja5q+qQZjKwyB/iCc+paJD320zFnLJ8G+y1ZyemQ==}
+    dev: false
 
   /@humanwhocodes/config-array/0.6.0:
     resolution: {integrity: sha512-JQlEKbcgEUjBFhLIF4iqM7u/9lwgHRBcpHrmUNCALK0Q3amXN6lxdoXLnF0sm11E9VqTmBALR87IlUg1bZ8A9A==}
@@ -563,6 +569,37 @@ packages:
 
   /@vue/shared/3.2.22:
     resolution: {integrity: sha512-qWVav014mpjEtbWbEgl0q9pEyrrIySKum8UVYjwhC6njrKzknLZPvfuYdQyVbApsqr94tf/3dP4pCuZmmjdCWQ==}
+
+  /@vueuse/core/7.0.1_vue@3.2.22:
+    resolution: {integrity: sha512-xWA1o+pQK2uqm6yewjnP8JvrFCPKokTQfTzF/7f74iCgGwPmyPVgPLLGlKLE7NZz32DlWEiGvF43E14X4a19zQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@vueuse/shared': 7.0.1_vue@3.2.22
+      vue: 3.2.22
+      vue-demi: 0.12.1_vue@3.2.22
+    dev: false
+
+  /@vueuse/shared/7.0.1_vue@3.2.22:
+    resolution: {integrity: sha512-sZWV8Mq4R5oCO4Db/jN6OB3VS6enL7XieLbvKVggk73wFaVEMlEF140gOmp8u6K70ZbqPKwMuNntm1rjuPOrmg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      vue: 3.2.22
+      vue-demi: 0.12.1_vue@3.2.22
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.6.0:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2553,27 +2590,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-auto-import/0.4.14_vite@2.6.14:
-    resolution: {integrity: sha512-ui+M+E30xrdbXGt0+MMEM4fKhDqoBlv+xVKiYllVqUplqg/sFuXe28DBxM2xi2zAbwd/Vw3KUcLdvSmjzpA7+A==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      '@vueuse/core': ^6.0.0
-    peerDependenciesMeta:
-      '@vueuse/core':
-        optional: true
-    dependencies:
-      '@antfu/utils': 0.3.0
-      '@rollup/pluginutils': 4.1.1
-      local-pkg: 0.1.0
-      magic-string: 0.25.7
-      resolve: 1.20.0
-      unplugin: 0.2.21_vite@2.6.14
-    transitivePeerDependencies:
-      - rollup
-      - vite
-      - webpack
-    dev: true
-
   /unplugin-icons/0.12.18_744c3dc4f4777e47e76c501a561da7bf:
     resolution: {integrity: sha512-o2nc6AGGk4StTx5xMTndVBylszRg/hJvHMO1eEFfrfw9yh+eedre2S4F8EHltn3FjADL2a17GpXcvCAwmONgXA==}
     peerDependencies:
@@ -2862,6 +2878,21 @@ packages:
       vscode-pug-languageservice: 0.27.24
       vscode-typescript-languageservice: 0.27.25
     dev: true
+
+  /vue-demi/0.12.1_vue@3.2.22:
+    resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.22
+    dev: false
 
   /vue-eslint-parser/8.0.1_eslint@8.2.0:
     resolution: {integrity: sha512-lhWjDXJhe3UZw2uu3ztX51SJAPGPey1Tff2RK3TyZURwbuI4vximQLzz4nQfCv8CZq4xx7uIiogHMMoSJPr33A==}

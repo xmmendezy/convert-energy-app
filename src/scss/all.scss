@@ -1,1 +1,15 @@
 @import '~bulma/bulma.sass';
+@import '~@fontsource/poppins/index.css';
+
+#app {
+	font-family: 'Poppins';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #4d393e;
+}
+
+.icon {
+	position: relative;
+	top: 3.5px;
+}

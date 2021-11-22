@@ -6,23 +6,27 @@ import Layouts from 'vite-plugin-vue-layouts';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import Components from 'unplugin-vue-components/vite';
-import AutoImport from 'unplugin-auto-import/vite';
 
 export default defineConfig({
 	resolve: {
 		alias: {
 			'~/': `${path.resolve(__dirname, 'src')}/`,
 			'~bulma': 'node_modules/bulma',
+			'~@fontsource': 'node_modules/@fontsource',
 		},
 	},
 	plugins: [
 		Vue(),
-		AutoImport(),
 		Pages(),
 		Layouts(),
 		Components({
 			dts: true,
-			resolvers: IconsResolver() as any,
+			resolvers: IconsResolver({
+				prefix: false,
+				alias: {
+					fas: 'fa-solid',
+				},
+			}) as any,
 		}),
 		Icons({
 			compiler: 'vue3',

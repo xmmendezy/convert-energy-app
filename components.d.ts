@@ -4,7 +4,17 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    FasGasPump: typeof import('~icons/fa-solid/gas-pump')['default']
+    FasHome: typeof import('~icons/fa-solid/home')['default']
+    FasInfoCircle: typeof import('~icons/fa-solid/info-circle')['default']
+    FasQuestionCircle: typeof import('~icons/fa-solid/question-circle')['default']
+    FasRandom: typeof import('~icons/fa-solid/random')['default']
+    FasUserFriends: typeof import('~icons/fa-solid/user-friends')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    IFasHome: typeof import('~icons/fa-solid/home')['default']
+    IFaSolidHome: typeof import('~icons/fa-solid/home')['default']
+    IFasUse: typeof import('~icons/fa-solid/use')['default']
+    IFasUser: typeof import('~icons/fa-solid/user')['default']
   }
 }
 
