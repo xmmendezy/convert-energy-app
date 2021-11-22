@@ -15,7 +15,7 @@
 				<div class="card is-shadowless mb-5">
 					<div class="card-content">
 						<div class="content">
-							<p class="has-text-left has-text-weight-bold is-size-5 mb-1">Global Red Land</p>
+							<p class="has-text-left has-text-weight-bold is-size-5 mb-1">Global RedLand</p>
 							<p class="has-text-left is-size-6">contancto@globalredland.com</p>
 						</div>
 					</div>
@@ -26,27 +26,27 @@
 					<span class="ml-4"> Inicio </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/" @click="toggleActive">
+				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/convert_units" @click="toggleActive">
 					<fas-random class="icon" />
 					<span class="ml-4"> Conversor de Unidades </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/" @click="toggleActive">
+				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/convert_energy" @click="toggleActive">
 					<fas-gas-pump class="icon" />
 					<span class="ml-4"> Equivalente Energético </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/" @click="toggleActive">
+				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/us" @click="toggleActive">
 					<fas-user-friends class="icon" />
 					<span class="ml-4"> Nosotros </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/" @click="toggleActive">
+				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/tutorial" @click="toggleActive">
 					<fas-question-circle class="icon" />
 					<span class="ml-4"> Tutorial </span>
 				</router-link>
 
-				<a class="navbar-item has-text-left ml-4" to="/" @click="toggleActive">
+				<a class="navbar-item has-text-left ml-4" @click="toggleModal">
 					<fas-info-circle class="icon" />
 					<span class="ml-4"> Acerca de </span>
 				</a>
@@ -55,6 +55,30 @@
 	</nav>
 	<div class="over-ground" :class="[{ 'is-active': active }]"></div>
 	<router-view></router-view>
+	<div class="modal" :class="[{ 'is-active': active_modal }]">
+		<div class="modal-background"></div>
+		<div class="modal-card" ref="modal">
+			<section class="modal-card-body">
+				<button class="button is-white is-fullwidth is-justify-content-flex-end" @click="toggleModal">
+					<fas-times />
+				</button>
+				<p class="modal-title is-size-3 mb-2">REDLAND</p>
+				<p class="modal-title is-size-6">Energy Project Developers</p>
+				<p class="is-size-5 mt-5">CONVERSOR DE UNIDADES 1.2</p>
+				<p class="is-size-7">Copyriht &copy; 2021</p>
+				<p class="is-size-7 mt-5">Gestor:</p>
+				<p class="is-size-7">Ing. Edgard Ramirez Cadenillas</p>
+				<p class="is-size-7 mt-5">Colaboradores:</p>
+				<p class="is-size-7">Ing. Eduardo Torres Morales</p>
+				<p class="is-size-7">Ing. Carlos Jiménez Huayta</p>
+				<p class="is-size-7 mt-5">Desarrollador:</p>
+				<p class="is-size-7">Xavier Méndez (xmmendezy@gmail.com)</p>
+				<p class="is-size-7 mt-5">
+					<a class="modal-title" @click="openURL">Sitio web Global REDLAND</a>
+				</p>
+			</section>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -62,9 +86,12 @@ import { ref, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { onClickOutside, templateRef } from '@vueuse/core';
 import { useStorage } from '@vueuse/core';
+import { Browser } from '@capacitor/browser';
 
 const menu = templateRef('menu');
+const modal = templateRef('modal');
 const active = ref(false);
+const active_modal = ref(false);
 const transition = ref(false);
 
 const toggleActive = () => {
@@ -74,9 +101,24 @@ const toggleActive = () => {
 	}
 };
 
+const toggleModal = () => {
+	active_modal.value = !active_modal.value;
+	toggleActive();
+};
+
+const openURL = async () => {
+	await Browser.open({ url: 'https://globalredland.com/' });
+};
+
 onClickOutside(menu, () => {
 	if (active.value) {
 		active.value = false;
+	}
+});
+
+onClickOutside(modal, () => {
+	if (active_modal.value) {
+		active_modal.value = false;
 	}
 });
 
@@ -93,7 +135,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-$primary: #d81c60;
+@import '../scss/vars.scss';
 
 @keyframes navAnimIn {
 	0% {
@@ -127,7 +169,7 @@ $primary: #d81c60;
 		background: rgba(0, 0, 0, 0.2);
 	}
 	100% {
-		background: rgba(0, 0, 0, 0.4);
+		background: $background-color;
 	}
 }
 
@@ -197,6 +239,23 @@ $primary: #d81c60;
 		height: 100vh;
 		width: 100vw;
 		animation: overGroundIn 200ms ease-in-out forwards;
+	}
+}
+
+.modal {
+	.modal-card {
+		width: 90vw;
+
+		.modal-card-head {
+			background-color: #fff;
+			border: none;
+		}
+
+		.modal-card-body {
+			.modal-title {
+				color: $primary;
+			}
+		}
 	}
 }
 </style>

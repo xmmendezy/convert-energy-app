@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@capacitor/browser': ^1.0.6
   '@capacitor/cli': ^3.3.2
   '@capacitor/core': ^3.3.2
   '@fontsource/poppins': ^4.5.0
@@ -28,6 +29,7 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
+  '@capacitor/browser': 1.0.6_@capacitor+core@3.3.2
   '@capacitor/core': 3.3.2
   '@fontsource/poppins': 4.5.0
   '@vueuse/core': 7.0.1_vue@3.2.22
@@ -88,6 +90,14 @@ packages:
       '@babel/helper-validator-identifier': 7.15.7
       to-fast-properties: 2.0.0
     dev: true
+
+  /@capacitor/browser/1.0.6_@capacitor+core@3.3.2:
+    resolution: {integrity: sha512-ZDx+HNPRQZKHpWxbYEyDz34Ge4fwhiiGg2UEnA+ol+pmdvHyYxw/c8HafCEVRJutHrXcVdSNoBNAeEPkQeabrQ==}
+    peerDependencies:
+      '@capacitor/core': ^3.0.0
+    dependencies:
+      '@capacitor/core': 3.3.2
+    dev: false
 
   /@capacitor/cli/3.3.2:
     resolution: {integrity: sha512-LmH3DzuwNL3k995CgAs20KXjQhDWrQCQgur3M8nqIKecZk0xCoSGghht+rEK8/Gqn0XqdBGdgUgop+nep17edg==}

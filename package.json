@@ -10,6 +10,7 @@
 		"prettier": "prettier --write '{src,tests}/**/*.{vue,ts,tsx,js,jsx,json,scss,css}'"
 	},
 	"dependencies": {
+		"@capacitor/browser": "^1.0.6",
 		"@capacitor/core": "^3.3.2",
 		"@fontsource/poppins": "^4.5.0",
 		"@vueuse/core": "^7.0.1",

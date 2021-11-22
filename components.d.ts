@@ -9,6 +9,7 @@ declare module 'vue' {
     FasInfoCircle: typeof import('~icons/fa-solid/info-circle')['default']
     FasQuestionCircle: typeof import('~icons/fa-solid/question-circle')['default']
     FasRandom: typeof import('~icons/fa-solid/random')['default']
+    FasTimes: typeof import('~icons/fa-solid/times')['default']
     FasUserFriends: typeof import('~icons/fa-solid/user-friends')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IFasHome: typeof import('~icons/fa-solid/home')['default']
