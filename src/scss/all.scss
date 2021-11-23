@@ -32,6 +32,16 @@
 		.is-fullwidth {
 			width: 100%;
 		}
+
+		.card-elements {
+			justify-content: flex-start;
+		}
+
+		@media (min-width: 400px) {
+			.card-elements {
+				justify-content: center;
+			}
+		}
 	}
 
 	.circle {
@@ -52,12 +62,16 @@
 			text-align: center;
 			caret-color: $primary;
 			color: #4d393e;
+
+			&.help {
+				font-size: 0.5rem;
+			}
 		}
 	}
 
 	.button-center {
 		width: 20vw;
-		margin: auto 2rem;
+		margin: auto 1.5rem;
 		position: relative;
 		top: 10%;
 		left: 0;
@@ -70,13 +84,19 @@
 		.button {
 			border: 2px solid $border;
 			border-radius: 0.4rem;
-			min-width: 35vw;
+			width: 35vw;
+			height: fit-content;
+			padding: 0.5rem;
+			font-size: 0.8rem;
+			word-wrap: break-word;
+			white-space: normal;
 
 			&:hover {
 				box-shadow: unset;
 			}
 
-			&:active {
+			&:active,
+			&.active {
 				border: 2px solid $primary;
 			}
 
@@ -84,6 +104,10 @@
 				border: 2px solid $primary;
 				background-color: $primary;
 				color: #fff;
+			}
+
+			&.is-fullwidth {
+				width: 100%;
 			}
 		}
 	}

@@ -12,12 +12,12 @@ specifiers:
   '@vitejs/plugin-vue': ^1.9.3
   '@vue/compiler-sfc': ^3.2.22
   '@vueuse/core': ^7.0.1
-  '@vueuse/head': ^0.7.2
   bulma: ^0.9.3
   eslint: ^8.2.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.1.1
+  pinia: ^2.0.4
   sass: ^1.43.4
   typescript: ^4.4.3
   unplugin-icons: ^0.12.18
@@ -35,8 +35,8 @@ dependencies:
   '@capacitor/core': 3.3.2
   '@fontsource/poppins': 4.5.0
   '@vueuse/core': 7.0.1_vue@3.2.22
-  '@vueuse/head': 0.7.2_vue@3.2.22
   bulma: 0.9.3
+  pinia: 2.0.4_typescript@4.5.2+vue@3.2.22
   vue: 3.2.22
   vue-router: 4.0.12_vue@3.2.22
   vue3-carousel: 0.1.30_vue@3.2.22
@@ -598,14 +598,6 @@ packages:
       '@vueuse/shared': 7.0.1_vue@3.2.22
       vue: 3.2.22
       vue-demi: 0.12.1_vue@3.2.22
-    dev: false
-
-  /@vueuse/head/0.7.2_vue@3.2.22:
-    resolution: {integrity: sha512-97RxYbIYwB9yFuRbdDbktsjKS0k12wYNksYV/UtYLOFNx+GAflK2kQ63b+sx09MJllEozD3GLeXV7O8rzMskeQ==}
-    peerDependencies:
-      vue: '>=3'
-    dependencies:
-      vue: 3.2.22
     dev: false
 
   /@vueuse/shared/7.0.1_vue@3.2.22:
@@ -2161,6 +2153,24 @@ packages:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pinia/2.0.4_typescript@4.5.2+vue@3.2.22:
+    resolution: {integrity: sha512-nAc2f9HmOcBbWRlnGDuBGedM1G6uFAR10FnJWP1/dgm1I2tM5jbgKL/3IgynP4mBnPCy//ky7g0WpCZl5Mmxsg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: ^4.4.4
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.20.1
+      typescript: 4.5.2
+      vue: 3.2.22
+      vue-demi: 0.12.1_vue@3.2.22
+    dev: false
 
   /plist/3.0.4:
     resolution: {integrity: sha512-ksrr8y9+nXOxQB2osVNqrgvX/XQPOXaU4BQMKjYq8PvaY1U18mo+fKgBSwzK+luSyinOuPae956lSVcBwxlAMg==}
