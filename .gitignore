@@ -18,3 +18,5 @@ app_convert.jks
 private_key.pepk
 
 /node_modules
+/ios
+/dist
