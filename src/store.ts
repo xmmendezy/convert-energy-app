@@ -162,6 +162,7 @@ export const useStore = defineStore('main', {
 			let totalConvertirUnidades = 0.0;
 
 			if (cant) {
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				let parametro = parseFloat(cant as any);
 
 				if (unit_1[0] == 36) {
@@ -764,6 +765,7 @@ export const useStore = defineStore('main', {
 			let simbolo = '';
 
 			if (cant) {
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 				let parametro = parseFloat(cant as any);
 
 				if (unit_1[0] == 36) {
@@ -1107,7 +1109,8 @@ export const useStore = defineStore('main', {
 						simbolo = 'Mm3s equivalentes de GNL.';
 						break;
 					case 51: //m3
-						totalConvertirEquivalentes = ((parametro / this.params_convert[1]) * Math.pow(12 * 0.0254, 3)) / 600;
+						totalConvertirEquivalentes =
+							((parametro / this.params_convert[1]) * Math.pow(12 * 0.0254, 3)) / 600;
 						simbolo = 'm3 equivalentes de GNL.';
 						break;
 					case 52: //PC

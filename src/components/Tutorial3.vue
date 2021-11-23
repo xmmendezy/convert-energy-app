@@ -48,37 +48,10 @@ if (window.innerHeight < 570) {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/vars.scss';
-
 .tutorial {
-	display: block;
-	height: 90vh;
-
-	.tutorial-top {
-		background-color: $primary;
-		width: 100vw;
-
-		.image {
-			height: 60vh;
-
-			.phone {
-				height: 80%;
-				width: auto;
-				margin: auto;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-		}
-	}
-
-	.tutorial-content {
-		height: 25vh;
-
-		.tutorial-title {
-			color: $primary;
-		}
+	.phone {
+		height: auto;
+		width: calc(v-bind(width) - 2rem);
 	}
 }
 </style>

@@ -107,11 +107,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { onClickOutside, templateRef } from '@vueuse/core';
-import { useStorage } from '@vueuse/core';
+import { templateRef, useStorage } from '@vueuse/core';
+import { onClickOutside } from '../onClickOutside';
 import { Browser } from '@capacitor/browser';
-
-document.documentElement.classList.add('has-navbar-fixed-top');
 
 const menu = templateRef('menu');
 const modal = templateRef('modal');

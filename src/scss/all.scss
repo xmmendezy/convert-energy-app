@@ -10,7 +10,10 @@
 }
 
 html {
-	padding-top: calc($navbar-height + var(--sat));
+	&.has-navbar-fixed-top {
+		padding-top: calc($navbar-height + var(--sat));
+		padding-bottom: var(--sab);
+	}
 }
 
 #app {
@@ -86,6 +89,12 @@ html {
 			&.help {
 				font-size: 0.5rem;
 			}
+
+			&:focus {
+				outline: none;
+				border: none;
+				box-shadow: none;
+			}
 		}
 	}
 
@@ -129,6 +138,46 @@ html {
 			&.is-fullwidth {
 				width: 100%;
 			}
+		}
+	}
+}
+
+.tutorial {
+	display: block;
+	height: 80vh;
+
+	.tutorial-top {
+		background-color: $primary;
+		width: 100vw;
+
+		.image {
+			height: 50vh;
+
+			.phone {
+				margin: auto;
+				position: absolute;
+				max-height: 50vh;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			.logo {
+				height: auto;
+				margin: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -90%);
+			}
+		}
+	}
+
+	.tutorial-content {
+		height: 25vh;
+
+		.tutorial-title {
+			color: $primary;
 		}
 	}
 }

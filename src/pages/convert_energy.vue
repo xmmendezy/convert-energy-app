@@ -45,7 +45,7 @@
 				</div>
 				<div class="button-center is-fullwidth">
 					<button
-						v-if="typeof result === 'number'"
+						v-if="typeof result === 'number' && !changed"
 						class="button primary mt-4 mb-4 is-fullwidth"
 						@click="clear"
 					>
@@ -114,7 +114,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useStore, Fuel } from '../store';
 
 const store = useStore();
@@ -123,6 +123,7 @@ const active_modal_1 = ref(false);
 const active_modal_2 = ref(false);
 const active_modal_3 = ref(false);
 const active_modal_4 = ref(false);
+const changed = ref(false);
 
 const fuels = store.getFuels();
 const units_1 = ref<Fuel[]>([[1, 'Producto', 5]]);
@@ -184,8 +185,13 @@ const selectModal4 = (i: number) => {
 	toggleModal4();
 };
 
+watch([cant, fuel_1, fuel_2, unit_1, unit_2], () => {
+	changed.value = true;
+});
+
 const validForm = computed(() => {
 	return (
+		changed.value &&
 		!!cant.value &&
 		fuel_1.value[0] !== 1 &&
 		fuel_2.value[0] !== 1 &&
@@ -196,6 +202,7 @@ const validForm = computed(() => {
 
 const convert = () => {
 	if (validForm.value) {
+		changed.value = false;
 		[result.value, simbolo.value] = store.convertEnergy(cant.value as number, unit_1.value, unit_2.value);
 	}
 };

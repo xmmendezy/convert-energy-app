@@ -5,10 +5,6 @@ const config: CapacitorConfig = {
 	appName: 'converter.energy',
 	webDir: 'dist',
 	bundledWebRuntime: false,
-	server: {
-		url: 'http://localhost:3000',
-		cleartext: true,
-	},
 };
 
 export default config;
