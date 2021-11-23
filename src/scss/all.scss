@@ -2,12 +2,32 @@
 @import '~bulma/bulma.sass';
 @import '~@fontsource/poppins/index.css';
 
+:root {
+	--sat: env(safe-area-inset-top);
+	--sar: env(safe-area-inset-right);
+	--sab: env(safe-area-inset-bottom);
+	--sal: env(safe-area-inset-left);
+}
+
+html {
+	padding-top: calc($navbar-height + var(--sat));
+}
+
 #app {
 	font-family: 'Poppins';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: $black;
+}
+
+.navbar {
+	background-color: $primary;
+	min-height: calc($navbar-height + var(--sat));
+}
+
+.navbar-brand {
+	margin-top: var(--sat);
 }
 
 .icon {

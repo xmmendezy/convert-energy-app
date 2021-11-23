@@ -12,7 +12,7 @@
 			</div>
 		</div>
 	</figure>
-	<div class="content m-5">
+	<div class="m-5">
 		<span class="line mt-3 mb-5"></span>
 		<p class="has-text-left">NOSOTROS</p>
 		<p class="has-text-justified mt-3">

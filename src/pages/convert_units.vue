@@ -93,7 +93,7 @@ const active_modal_2 = ref(false);
 const active_modal_3 = ref(false);
 
 const fuels = store.getFuels();
-const units = ref<Fuel[]>([[0, 'Unidad', 0]]);
+const units = ref<Fuel[]>([[1, 'Producto', 5]]);
 
 const cant = ref<number | undefined>(undefined);
 const result = ref<number | undefined>(undefined);
@@ -116,8 +116,13 @@ const toggleModal3 = () => {
 const selectModal1 = (i: number) => {
 	fuel_1.value = fuels[i];
 	units.value = store.getUnits(fuel_1.value[0]);
-	unit_1.value = units.value[0];
+	if (fuel_1.value[0] !== 1) {
+		units.value = store.getUnits(fuel_1.value[0]);
+	} else {
+		units.value = [[1, 'Producto', 5]];
+	}
 	unit_2.value = units.value[0];
+	unit_1.value = units.value[0];
 	toggleModal1();
 };
 
@@ -147,7 +152,7 @@ const convert = () => {
 };
 
 const clear = () => {
-	units.value = [[0, 'Unidad', 0]];
+	units.value = [[1, 'Producto', 5]];
 	cant.value = undefined;
 	result.value = undefined;
 	fuel_1.value = fuels[0];

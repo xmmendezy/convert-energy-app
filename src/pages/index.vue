@@ -1,6 +1,6 @@
 <template>
 	<div class="content">
-		<p class="title-index is-size-4 mb-4">Conversor Energético</p>
+		<p class="title-index is-size-4 mb-4">Conversor Energético {{ a }}</p>
 		<div class="card">
 			<div class="card-content">
 				<router-link class="button has-text-left mb-5" :class="[size_text]" to="/convert_units">
@@ -27,6 +27,10 @@ if (window.innerHeight < 570) {
 } else {
 	size_text.value = 'is-size-6';
 }
+
+const a = getComputedStyle(document.documentElement).getPropertyValue('--sat');
+
+console.log(a);
 </script>
 
 <style lang="scss">

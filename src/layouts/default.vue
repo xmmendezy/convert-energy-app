@@ -231,9 +231,9 @@ if (window.innerWidth < 350) {
 .navbar-menu {
 	position: fixed;
 	left: -100%;
-	top: 3.25rem;
+	top: calc($navbar-height + var(--sat));
 	width: 80vw;
-	height: calc(100vh - 3.25rem);
+	height: calc(100vh - $navbar-height - var(--sat));
 	z-index: 10000000;
 	display: block;
 
