@@ -13,6 +13,7 @@ export default defineConfig({
 			'~/': `${path.resolve(__dirname, 'src')}/`,
 			'~bulma': 'node_modules/bulma',
 			'~@fontsource': 'node_modules/@fontsource',
+			'~vue3-carousel': 'node_modules/vue3-carousel',
 		},
 	},
 	plugins: [

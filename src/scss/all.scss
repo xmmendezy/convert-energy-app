@@ -7,10 +7,84 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #4d393e;
+	color: $black;
 }
 
 .icon {
 	position: relative;
 	top: 3.5px;
+
+	&.translate {
+		transform: translateY(-15%);
+	}
+}
+
+.is-size-8 {
+	font-size: 0.65rem !important;
+}
+
+.convert {
+	.title-index {
+		color: $primary;
+	}
+
+	.card-content {
+		.is-fullwidth {
+			width: 100%;
+		}
+	}
+
+	.circle {
+		border: 2px solid $primary;
+		border-radius: 50%;
+		width: 20vh;
+		height: 20vh;
+
+		.circle-center {
+			margin: auto;
+			padding: 0 0.5rem 0 0.4;
+			position: relative;
+			width: inherit;
+			top: 40%;
+			left: 0;
+			border: transparent;
+			background-color: transparent;
+			text-align: center;
+			caret-color: $primary;
+			color: #4d393e;
+		}
+	}
+
+	.button-center {
+		width: 20vw;
+		margin: auto 2rem;
+		position: relative;
+		top: 10%;
+		left: 0;
+
+		&.is-fullwidth {
+			width: 100%;
+			margin: auto;
+		}
+
+		.button {
+			border: 2px solid $border;
+			border-radius: 0.4rem;
+			min-width: 35vw;
+
+			&:hover {
+				box-shadow: unset;
+			}
+
+			&:active {
+				border: 2px solid $primary;
+			}
+
+			&.primary {
+				border: 2px solid $primary;
+				background-color: $primary;
+				color: #fff;
+			}
+		}
+	}
 }

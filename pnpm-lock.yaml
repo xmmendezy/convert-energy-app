@@ -12,6 +12,7 @@ specifiers:
   '@vitejs/plugin-vue': ^1.9.3
   '@vue/compiler-sfc': ^3.2.22
   '@vueuse/core': ^7.0.1
+  '@vueuse/head': ^0.7.2
   bulma: ^0.9.3
   eslint: ^8.2.0
   eslint-config-prettier: ^8.3.0
@@ -27,15 +28,18 @@ specifiers:
   vue: ^3.2.16
   vue-router: ^4.0.12
   vue-tsc: ^0.3.0
+  vue3-carousel: ^0.1.30
 
 dependencies:
   '@capacitor/browser': 1.0.6_@capacitor+core@3.3.2
   '@capacitor/core': 3.3.2
   '@fontsource/poppins': 4.5.0
   '@vueuse/core': 7.0.1_vue@3.2.22
+  '@vueuse/head': 0.7.2_vue@3.2.22
   bulma: 0.9.3
   vue: 3.2.22
   vue-router: 4.0.12_vue@3.2.22
+  vue3-carousel: 0.1.30_vue@3.2.22
 
 devDependencies:
   '@capacitor/cli': 3.3.2
@@ -594,6 +598,14 @@ packages:
       '@vueuse/shared': 7.0.1_vue@3.2.22
       vue: 3.2.22
       vue-demi: 0.12.1_vue@3.2.22
+    dev: false
+
+  /@vueuse/head/0.7.2_vue@3.2.22:
+    resolution: {integrity: sha512-97RxYbIYwB9yFuRbdDbktsjKS0k12wYNksYV/UtYLOFNx+GAflK2kQ63b+sx09MJllEozD3GLeXV7O8rzMskeQ==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      vue: 3.2.22
     dev: false
 
   /@vueuse/shared/7.0.1_vue@3.2.22:
@@ -2949,6 +2961,14 @@ packages:
       '@vue/runtime-dom': 3.2.22
       '@vue/server-renderer': 3.2.22_vue@3.2.22
       '@vue/shared': 3.2.22
+    dev: false
+
+  /vue3-carousel/0.1.30_vue@3.2.22:
+    resolution: {integrity: sha512-J/kJSqyagNk4nGDeSKi0dFTTkNqPqRjX5WzLZUdlZPSE7swt75an1uVqdljUM7ZgDkqTHPNRfad4VHtI+IC+6g==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.22
     dev: false
 
   /webpack-virtual-modules/0.4.3:

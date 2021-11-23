@@ -16,7 +16,8 @@
 		"@vueuse/core": "^7.0.1",
 		"bulma": "^0.9.3",
 		"vue": "^3.2.16",
-		"vue-router": "^4.0.12"
+		"vue-router": "^4.0.12",
+		"vue3-carousel": "^0.1.30"
 	},
 	"devDependencies": {
 		"@capacitor/cli": "^3.3.2",

@@ -2,9 +2,9 @@
 	<nav class="navbar is-fixed-top" ref="menu">
 		<div class="navbar-brand">
 			<a class="navbar-burger" @click="toggleActive">
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
+				<span></span>
+				<span></span>
+				<span></span>
 			</a>
 
 			<p class="navbar-item navbar-title has-text-weight-bold">REDLAND</p>
@@ -14,39 +14,62 @@
 			<div class="navbar-start">
 				<div class="card is-shadowless mb-5">
 					<div class="card-content">
-						<div class="content">
-							<p class="has-text-left has-text-weight-bold is-size-5 mb-1">Global RedLand</p>
-							<p class="has-text-left is-size-6">contancto@globalredland.com</p>
-						</div>
+						<p class="has-text-left has-text-weight-bold mb-1" :class="[size_title[0]]">Global RedLand</p>
+						<p class="has-text-left" :class="[size_title[1]]">contancto@globalredland.com</p>
 					</div>
 				</div>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/" @click="toggleActive">
+				<router-link
+					class="navbar-item has-text-left ml-4 mb-2"
+					:class="[size_text]"
+					to="/"
+					@click="toggleActive"
+				>
 					<fas-home class="icon" />
 					<span class="ml-4"> Inicio </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/convert_units" @click="toggleActive">
+				<router-link
+					class="navbar-item has-text-left ml-4 mb-2"
+					:class="[size_text]"
+					to="/convert_units"
+					@click="toggleActive"
+				>
 					<fas-random class="icon" />
 					<span class="ml-4"> Conversor de Unidades </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/convert_energy" @click="toggleActive">
+				<router-link
+					class="navbar-item has-text-left ml-4 mb-2"
+					:class="[size_text]"
+					to="/convert_energy"
+					@click="toggleActive"
+				>
 					<fas-gas-pump class="icon" />
 					<span class="ml-4"> Equivalente Energético </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/us" @click="toggleActive">
+				<router-link
+					class="navbar-item has-text-left ml-4 mb-2"
+					:class="[size_text]"
+					to="/us"
+					@click="toggleActive"
+				>
 					<fas-user-friends class="icon" />
 					<span class="ml-4"> Nosotros </span>
 				</router-link>
 
-				<router-link class="navbar-item has-text-left ml-4 mb-2" to="/tutorial" @click="toggleActive">
+				<router-link
+					class="navbar-item has-text-left ml-4 mb-2"
+					:class="[size_text]"
+					to="/tutorial"
+					@click="toggleActive"
+				>
 					<fas-question-circle class="icon" />
 					<span class="ml-4"> Tutorial </span>
 				</router-link>
 
-				<a class="navbar-item has-text-left ml-4" @click="toggleModal">
+				<a class="navbar-item has-text-left ml-4" :class="[size_text]" @click="toggleModal">
 					<fas-info-circle class="icon" />
 					<span class="ml-4"> Acerca de </span>
 				</a>
@@ -87,6 +110,8 @@ import { useRouter, useRoute } from 'vue-router';
 import { onClickOutside, templateRef } from '@vueuse/core';
 import { useStorage } from '@vueuse/core';
 import { Browser } from '@capacitor/browser';
+
+document.documentElement.classList.add('has-navbar-fixed-top');
 
 const menu = templateRef('menu');
 const modal = templateRef('modal');
@@ -132,6 +157,17 @@ onMounted(() => {
 		}
 	}
 });
+
+const size_title = ref(['is-size-7', 'is-size-8']);
+const size_text = ref('is-size-8');
+
+if (window.innerWidth < 350) {
+	size_title.value = ['is-size-7', 'is-size-8'];
+	size_text.value = 'is-size-8';
+} else {
+	size_title.value = ['is-size-5', 'is-size-6'];
+	size_text.value = 'is-size-6';
+}
 </script>
 
 <style lang="scss" scoped>
@@ -232,8 +268,10 @@ onMounted(() => {
 
 .over-ground {
 	position: absolute;
+	top: 0;
 	height: 0;
 	width: 0;
+	z-index: 10;
 
 	&.is-active {
 		height: 100vh;
