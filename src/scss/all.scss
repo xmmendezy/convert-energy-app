@@ -84,10 +84,11 @@ html {
 			background-color: transparent;
 			text-align: center;
 			caret-color: $primary;
+			font-size: 1.5rem;
 			color: #4d393e;
 
 			&.help {
-				font-size: 0.5rem;
+				font-size: 0.8rem;
 			}
 
 			&:focus {
@@ -116,7 +117,7 @@ html {
 			width: 35vw;
 			height: fit-content;
 			padding: 0.5rem;
-			font-size: 0.8rem;
+			font-size: 0.9rem;
 			word-wrap: break-word;
 			white-space: normal;
 

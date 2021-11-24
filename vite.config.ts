@@ -27,6 +27,7 @@ export default defineConfig({
 				alias: {
 					fas: 'fa-solid',
 				},
+				// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			}) as any,
 		}),
 		Icons({

@@ -5,7 +5,13 @@
 			<div class="card-content">
 				<div class="card-elements is-inline-flex is-fullwidth">
 					<div class="circle">
-						<input type="number" class="circle-center" placeholder="Cantidad" v-model="cant" />
+						<input
+							type="number"
+							pattern="\d*"
+							class="circle-center"
+							placeholder="Cantidad"
+							v-model="cant"
+						/>
 					</div>
 					<div class="button-center">
 						<button class="button mb-4" :class="[fuel_1[0] !== 1 ? 'active' : '']" @click="toggleModal1">
@@ -24,7 +30,7 @@
 		</div>
 		<div class="card">
 			<div class="card-content">
-				<p class="has-text-left is-size-7 mt-4 mb-4">Resultado</p>
+				<p class="has-text-left is-size-6 mt-4 mb-4">Resultado</p>
 				<div class="card-elements is-inline-flex is-fullwidth">
 					<div class="circle">
 						<p class="circle-center">{{ typeof result === 'number' ? result : '---' }}</p>
